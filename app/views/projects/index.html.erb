@@ -2,7 +2,7 @@
 <ol>
   <% @projects.each do |project| %>
     <li>
-      <strong><%= project.name %></strong> (Deadline: <%= project.deadline %>)
+      <strong><%= link_to project.name, project %></strong> (Deadline: <%= project.deadline %>)
     </li>
   <% end %>
 </ol>
