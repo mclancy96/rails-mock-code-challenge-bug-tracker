@@ -2,7 +2,7 @@
 <ol>
   <% @bugs.each do |bug| %>
     <li>
-      <strong><%= bug.title %></strong> (Severity: <%= bug.severity %>)
+      <strong><%= link_to bug.title, bug %></strong> (Severity: <%= bug.severity %>)
     </li>
   <% end %>
 </ol>

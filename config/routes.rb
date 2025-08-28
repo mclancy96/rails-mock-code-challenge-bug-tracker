@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :bugs, only: [:index]
-  resources :projects, only: [:index]
+  resources :bugs, only: %i[index show]
+  resources :projects, only: %i[index show]
 end
