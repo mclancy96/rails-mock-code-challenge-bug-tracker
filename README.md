@@ -18,13 +18,13 @@ Before you begin, fork and clone this repo, run `bundle install` and `bin/rails 
 
 ## The Domain
 
-The company needs to track bugs across multiple projects. Each project has a `name` and a `deadline`. Each bug has a `title` and a `severity` (e.g., low, medium, high), and belongs to a project. Each bug can have many status updates (e.g., "Open", "In Progress", "Resolved"), and each status update has a `message` and a `created_at` timestamp.
+The company needs to track bugs across multiple projects. Each project has a `name` and a `deadline`. Each bug has a `title` and a `severity` (e.g., low, medium, high), and belongs to a project. Each bug can have many status updates (e.g., "Open", "In Progress", "Resolved"). You will need to create a `StatusUpdate` model, where each status update has a `message` and a `created_at` timestamp, and belongs to a bug.
 
 ## Instructions / Deliverables
 
 Read through the instructions to get a sense of the scope of this code challenge, and then tackle them one by one.
 
-1. Create the associations between models. You may need to alter the schema to get your code working. Once set up, you should be able to run `bin/rails db:seed` without errors, and confirm in a `bin/rails console` that bugs, projects, and status updates have the correct relationships.
+1. Create the associations between models, including a `StatusUpdate` model that belongs to a bug. You may need to alter the schema to get your code working. Once set up, you should be able to run `bin/rails db:seed` without errors, and confirm in a `bin/rails console` that bugs, projects, and status updates have the correct relationships.
 
 2. On the bugs index page, a bug's `title` should link to its show page.
 
