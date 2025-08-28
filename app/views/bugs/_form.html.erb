@@ -1,0 +1,8 @@
+<%= form_with model: @bug, local: true do |f|%>
+  <%= f.hidden_field :project_id, value: @project.id %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :severity %>
+  <%= f.text_field :severity %> <br>
+  <%= f.submit %>
+<% end %>
