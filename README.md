@@ -1,7 +1,7 @@
 
-# Rails Mock Code Challenge: Bug Tracker
+# Rails Code Challenge: Bug Tracker
 
-Test your Rails skills by building a simple bug tracking platform! In this scenario, your company is managing multiple projects, and each project can have many bugs reported against it. Each bug can have status updates as it is worked on and resolved.
+It's time to put your Rails know-how to the test. Our company is managing multiple projects, and we need a way to track bugs and their progress!
 
 ## Objectives
 
@@ -18,17 +18,21 @@ Before you begin, fork and clone this repo, run `bundle install` and `bin/rails 
 
 ## The Domain
 
-The company needs to track bugs across multiple projects. Each project has a `name` and a `deadline`. Each bug has a `title` and a `severity` (e.g., low, medium, high), and belongs to a project. Each bug can have many status updates (e.g., "Open", "In Progress", "Resolved"). You will need to create a `StatusUpdate` model, where each status update has a `message` and a `created_at` timestamp, and belongs to a bug.
+Everyone is busy, but bug tracking is a BIG DEAL. We need a way to keep track of which bugs are reported for each project, and how their status changes over time.
+
+We have models for `Bug` and `Project`. We need a way to associate bugs with projects.
+
+Each project has a `name` and a `deadline`. Each bug has a `title` and a `severity` (e.g., low, medium, high), and belongs to a project.
 
 ## Instructions / Deliverables
 
 Read through the instructions to get a sense of the scope of this code challenge, and then tackle them one by one.
 
-1. Create the associations between models, including a `StatusUpdate` model that belongs to a bug. You may need to alter the schema to get your code working. Once set up, you should be able to run `bin/rails db:seed` without errors, and confirm in a `bin/rails console` that bugs, projects, and status updates have the correct relationships.
+1. Create the associations between models. You will have to alter the current schema to get your code working. Once you've set up your relationships properly, you will be able to run `bin/rails db:seed` without errors, and confirm in a `bin/rails console` that the bugs and projects have the correct relations.
 
 2. On the bugs index page, a bug's `title` should link to its show page.
 
-3. The bug show page should display the bug's title, severity, and its project. The project should link to the project's show page.
+3. The bug show page should include the bug's title, its severity (ex: 'high'), and its project. The project should link to the project's show page.
 
 4. On the project index page, a project's name should link to its show page.
 
@@ -38,11 +42,13 @@ Read through the instructions to get a sense of the scope of this code challenge
 
 7. A bug must have a title and a severity, and must belong to a project.
 
+8. (Bonus) A bug must have a severity that is one of: low, medium, or high.
+
 ## Submission
 
 Do not push your changes up to Github. When you finish:
 
 1. If you haven't already, create a custom branch with `git checkout -b custom_branch`.
 1. `git add` and `git commit` your changes.
-1. From you custom branch, run `git format-patch master --stdout > your_name.patch`, replacing `your_name` with your first and last name.
+1. From your custom branch, run `git format-patch master --stdout > your_name.patch`, replacing `your_name` with your first and last name.
 1. Send the patch file to your instructor on Connect before the specified time. Remember, you can use `open .` to launch a Finder window from your current directory, and then drag your file into Connect.

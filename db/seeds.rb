@@ -1,36 +1,23 @@
 # Reset data
-StatusUpdate.destroy_all
 Bug.destroy_all
 Project.destroy_all
 
 # Seed Projects
 projects = [
-  { name: 'Website Redesign', deadline: Date.today + 30 },
-  { name: 'Mobile App Launch', deadline: Date.today + 60 },
-  { name: 'API Integration', deadline: Date.today + 45 }
+  { name: 'Power Code Academy Website', deadline: Date.today + 30 },
+  { name: 'Internal Dashboard', deadline: Date.today + 45 },
+  { name: 'Mobile App', deadline: Date.today + 60 }
 ]
 
 projects = projects.map { |attrs| Project.create!(attrs) }
 
 # Seed Bugs
 bugs = [
-  { title: 'Navbar not responsive', severity: 'high', project: projects[0] },
-  { title: 'Login button missing', severity: 'medium', project: projects[0] },
-  { title: 'Crash on launch', severity: 'high', project: projects[1] },
-  { title: 'Slow API response', severity: 'low', project: projects[2] }
+  { title: 'Footer not displaying', severity: 'low', project: projects[0] },
+  { title: 'Profile picture upload fails', severity: 'medium', project: projects[0] },
+  { title: 'Dashboard stats incorrect', severity: 'high', project: projects[1] },
+  { title: 'App crashes on login', severity: 'high', project: projects[2] },
+  { title: 'Push notifications delayed', severity: 'medium', project: projects[2] }
 ]
 
-bugs = bugs.map { |attrs| Bug.create!(attrs) }
-
-# Seed Status Updates
-status_updates = [
-  { message: 'Open', bug: bugs[0], created_at: Time.now - 3.days },
-  { message: 'In Progress', bug: bugs[0], created_at: Time.now - 2.days },
-  { message: 'Resolved', bug: bugs[0], created_at: Time.now - 1.day },
-  { message: 'Open', bug: bugs[1], created_at: Time.now - 2.days },
-  { message: 'Open', bug: bugs[2], created_at: Time.now - 4.days },
-  { message: 'In Progress', bug: bugs[2], created_at: Time.now - 2.days },
-  { message: 'Open', bug: bugs[3], created_at: Time.now - 1.day }
-]
-
-status_updates.each { |attrs| StatusUpdate.create!(attrs) }
+bugs.each { |attrs| Bug.create!(attrs) }
