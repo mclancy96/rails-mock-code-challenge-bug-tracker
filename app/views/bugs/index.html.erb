@@ -1,0 +1,8 @@
+<h1>Bugs</h1>
+<ol>
+  <% @bugs.each do |bug| %>
+    <li>
+      <strong><%= bug.title %></strong> (Severity: <%= bug.severity %>)
+    </li>
+  <% end %>
+</ol>
