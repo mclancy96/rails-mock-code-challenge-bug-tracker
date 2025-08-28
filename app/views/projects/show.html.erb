@@ -7,4 +7,12 @@
   <% end %>
 </ul>
 <h3>New Bug</h3>
+<% if @bug.errors.any? %>
+  <h4>Errors:</h4>
+  <ul>
+    <% @bug.errors.full_messages.each do |e|%>
+      <li><%= e %></li>
+    <% end %>
+  </ul>
+<% end %>
 <%= render 'bugs/form' %>
