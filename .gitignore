@@ -7,7 +7,7 @@ log/
 tmp/
 
 # Ignore database files
-db/*.sqlite3
+db/*.sqlite3*
 db/*.sqlite3-*
 
 # Ignore Rails secret key base, credentials, and master key
